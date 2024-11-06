@@ -1,0 +1,28 @@
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+@font-face {
+  font-family: 'Blood Crow'; /* Give your font a name */
+  src: url('fonts/bloodcrow.ttf') format('truetype'); /* Path to your .ttf file */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+header{
+  font-family: "Blood Crow";
+  display: flex;
+  background-color: var(--theme-black);
+  color: white;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 50px;
+  font-size: 3em;
+
+  img{
+    height: 75px;
+    filter: invert();
+  }
+}
