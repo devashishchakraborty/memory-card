@@ -1,10 +1,16 @@
-import { useState } from 'react'
-import './App.css'
-import logo from "/logo.png"
-import Scoreboard from './components/Scoreboard'
+import { useState } from 'react';
+import './App.css';
+import logo from "/Kimetsu_no_Yaiba_Logo.svg";
+import Scoreboard from './components/Scoreboard';
+import Cards from './components/Cards';
+import characters from "./assets/data/characters.js"
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [cards, setCards] = useState(characters);
+  const [currentScore, setCurrentScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
+  const [clickedCards, setClickedCards] = useState([]);
 
   /*
     TODOS: 
@@ -22,6 +28,7 @@ function App() {
     </header>
     <main>
       <Scoreboard />
+      <Cards cards={cards} setCards={setCards} setCurrentScore={setCurrentScore}/>
     </main>
     <footer></footer>
     </>

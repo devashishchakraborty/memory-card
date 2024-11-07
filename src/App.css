@@ -1,11 +1,24 @@
 #root {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  --theme-black: #22201f;
+	--theme-dark-brown: #4b2d2d;
+  --theme-maroon:	#863841;
+  --theme-white: #eeeeed;
+  --theme-green: #46b077;
 }
 
 @font-face {
   font-family: 'Blood Crow'; /* Give your font a name */
   src: url('fonts/bloodcrow.ttf') format('truetype'); /* Path to your .ttf file */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Blood Crow Narrow'; /* Give your font a name */
+  src: url('fonts/bloodcrowc.ttf') format('truetype'); /* Path to your .ttf file */
   font-weight: normal;
   font-style: normal;
 }
@@ -18,11 +31,19 @@ header{
   color: white;
   align-items: center;
   gap: 16px;
-  padding: 16px 50px;
-  font-size: 3em;
+  padding: 16px 48px;
+  font-size: 2em;
 
   img{
-    height: 75px;
+    height: 48px;
     filter: invert();
   }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 48px;
 }

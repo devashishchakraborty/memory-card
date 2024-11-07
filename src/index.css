@@ -2,12 +2,6 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  
-  --theme-black: #22201f;
-	--theme-dark-brown: #4b2d2d;
-  --theme-maroon:	#863841;
-  --theme-white: #eeeeed;
-  --theme-green: #46b077;
 }
 
 html, body {

@@ -1,0 +1,43 @@
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  /* align-self: stretch; */
+  gap: 64px;
+}
+
+.card {
+  padding: 16px 16px 8px;
+  background-color: var(--theme-dark-brown);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 2px solid var(--theme-black);
+  will-change: transform;
+
+}
+
+.card:hover{
+  cursor: pointer;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 24px 8px rgba(70,176,119, 0.5);
+}
+
+.card:nth-child(even){
+  background-color: var(--theme-maroon);
+}
+
+.card img{
+  height: 300px;
+  border: 1px solid var(--theme-black);
+}
+
+.card, .card img{
+  border-radius: 8px;
+}
+
+.card .name{
+  color: var(--theme-white);
+  font-family: "Blood Crow";
+  font-size: 1.2em;
+  text-align: center;
+  /* font-weight: bold */
+}
