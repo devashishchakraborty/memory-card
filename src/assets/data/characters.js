@@ -2,7 +2,6 @@ import { v4 as uuidv4 } from 'uuid';
 import tanjiro from "../images/tanjiro.jpg"
 import giyuu from "../images/giyuu.jpg"
 import gyomei from "../images/gyomei.jpg"
-import inosuke from "../images/inosuke.jpg"
 import kagaya from "../images/kagaya.jpg"
 import muichiro from "../images/muichiro.jpg"
 import muzan from "../images/muzan.jpg"
@@ -12,6 +11,9 @@ import rengoku from "../images/rengoku.jpg"
 import shinobu from "../images/shinobu.jpg"
 import tengen from "../images/tengen.jpg"
 import zenitsu from "../images/zenitsu.jpg"
+import akaza from "../images/akaza.jpg"
+import inosuke from "../images/inosuke.jpg"
+import sanemi from "../images/sanemi.jpg"
 
 
 const characters = [
@@ -24,11 +26,6 @@ const characters = [
         id: uuidv4(),
         name: 'Zenitsu Agatsuma',
         image: zenitsu
-    },
-    {
-        id: uuidv4(),
-        name: 'Inosuke Hashibira',
-        image: inosuke
     },
     {
         id: uuidv4(),
@@ -64,6 +61,21 @@ const characters = [
         id: uuidv4(),
         name: 'Obanai Iguro',
         image: obanai
+    },    
+    {
+        id: uuidv4(),
+        name: 'Akaza',
+        image: akaza
+    },
+    {
+        id: uuidv4(),
+        name: 'Inosuke Hashibira',
+        image: inosuke
+    },
+    {
+        id: uuidv4(),
+        name: 'Sanemi Shinazugawa',
+        image: sanemi
     },
     {
         id: uuidv4(),
