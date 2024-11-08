@@ -1,34 +1,41 @@
 import { useState } from 'react';
 import './App.css';
 import logo from "/Kimetsu_no_Yaiba_Logo.svg";
-import Scoreboard from './components/Scoreboard';
 import Cards from './components/Cards';
 import characters from "./assets/data/characters.js"
+import GameOver from './components/GameOver.jsx';
 
 
 function App() {
-  const [cards, setCards] = useState(characters);
-  const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
+  const [cards, setCards] = useState(characters);
   const [clickedCards, setClickedCards] = useState([]);
-
-  /*
-    TODOS: 
-    1. Download Images to be used a Cards from Demon Slayer Anime.
-    2. Create Component for each section of the app which involves.
-    3. Convert image files into object attributes
-
-  */
+  const [gameResult, setGameResult] = useState(null);
 
   return (
     <>
+    {gameResult && <GameOver gameResult={gameResult} setGameResult={setGameResult} setClickedCards={setClickedCards}/>}
+    
     <header>
       <img src={logo} alt="" />
       MemorY CarD
     </header>
     <main>
-      <Scoreboard />
-      <Cards cards={cards} setCards={setCards} setCurrentScore={setCurrentScore}/>
+
+      <div className='scoreBoard'>
+          <div className="currentScore">Current Score : {clickedCards.length}</div>
+          <div className="highScore">High Score : {highScore}</div>
+      </div>
+
+      <Cards 
+        cards={cards} 
+        setCards={setCards}
+        clickedCards={clickedCards}
+        setHighScore={setHighScore}
+        setClickedCards={setClickedCards}
+        setGameResult={setGameResult}
+      />
+    
     </main>
     <footer></footer>
     </>
