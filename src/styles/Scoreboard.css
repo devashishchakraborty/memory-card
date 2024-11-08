@@ -1,9 +1,0 @@
-.scores{
-  font-family: "Blood Crow";
-  display: flex;
-  flex-direction: column;
-  /* gap: 16px; */
-  font-size: 1.2em;
-  align-self: flex-end;
-  text-align: end;
-}

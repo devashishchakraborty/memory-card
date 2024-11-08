@@ -1,24 +1,24 @@
 .cardContainer {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(7, 1fr);  
   justify-items: center;
-  /* align-self: stretch; */
-  gap: 64px;
+  gap: 32px;
 }
 
 .card {
-  padding: 16px 16px 8px;
+  padding: 8px;
   background-color: var(--theme-dark-brown);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   border: 2px solid var(--theme-black);
   will-change: transform;
-
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover{
   cursor: pointer;
   transform: translateY(-4px);
-  box-shadow: 0 4px 24px 8px rgba(70,176,119, 0.5);
+  box-shadow: 0 4px 16px 8px rgba(70,176,119, 0.5);
 }
 
 .card:nth-child(even){
@@ -26,7 +26,7 @@
 }
 
 .card img{
-  height: 300px;
+  height: 240px;
   border: 1px solid var(--theme-black);
 }
 
@@ -37,7 +37,6 @@
 .card .name{
   color: var(--theme-white);
   font-family: "Blood Crow";
-  font-size: 1.2em;
   text-align: center;
   /* font-weight: bold */
 }
