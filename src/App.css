@@ -7,6 +7,8 @@
   --theme-maroon:	#863841;
   --theme-white: #eeeeed;
   --theme-green: #46b077;
+  height: 100%;
+  font-family: 'Blood Crow';
 }
 
 @font-face {
@@ -25,13 +27,12 @@
 
 
 header{
-  font-family: "Blood Crow";
   display: flex;
   background-color: var(--theme-black);
   color: white;
   align-items: center;
   gap: 16px;
-  padding: 16px 48px;
+  padding: 8px 48px;
   font-size: 2em;
 
   img{
@@ -44,15 +45,48 @@ main {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 16px 48px;
+  padding: 8px 64px;
+  flex: 1;
+}
+
+.infoPanel{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Blood Crow";
+  font-size: 1.2em;
+}
+
+.instruction{
+  font-size: 1.2em;
 }
 
 .scoreBoard{
-  font-family: "Blood Crow";
   display: flex;
   flex-direction: column;
-  font-size: 1.2em;
-  align-self: flex-end;
   text-align: end;
 }
 
+.selectDifficulty{
+  font-size: 1.4em;
+  select{
+    font-size: 0.8em;
+    padding: 2px 8px;
+  }
+}
+
+
+footer{
+  display: flex;
+  background-color: var(--theme-dark-brown);
+  justify-content: center;
+  padding: 2px;
+  
+  a{
+    display: flex;
+    color: var(--theme-green);
+    filter: brightness(120%);
+    align-items: center;
+    text-decoration: none;
+  }
+}

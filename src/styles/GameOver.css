@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.5);;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .gameResultBox{
@@ -31,10 +31,11 @@
   font-family: 'Blood Crow Narrow';
   border-radius: 4px;
   background-color: var(--theme-green);
-  color: white;
-  padding: 4px 16px;
+  color: var(--theme-dark-brown);
+  padding: 8px 32px;
   transition: filter 0.1s ease;
   will-change: transform;
+
 }
 
 .playAgainBtn:hover{

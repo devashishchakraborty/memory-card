@@ -8,7 +8,7 @@ function GameOver({ gameResult, setGameResult, setClickedCards }){
   return (
     <div className="gameOverContainer">
       <div className="gameResultBox">
-        You {gameResult}!.
+        You {gameResult}!
         <button className="playAgainBtn" onClick={handleClick}>
           Play Again?
         </button>

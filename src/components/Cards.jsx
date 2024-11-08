@@ -1,7 +1,10 @@
 import "../styles/Cards.css"
 import { useEffect, useLayoutEffect, useState } from "react" 
 
-function Cards({ cards, setCards, clickedCards, setClickedCards, setHighScore, setGameResult }) {
+function Cards({ gameInfo, setGameInfo, clickedCards, setClickedCards, currentDifficulty, setGameResult }) {
+    const currentCards = gameInfo.find((game) => game.difficulty === currentDifficulty).cards;
+    const currentHighScore = gameInfo.find((game) => game.difficulty === currentDifficulty).highScore;
+
     const shuffleArray = (array) => {
         // Applying Fisher-Yates (or Knuth) shuffle algorithm
         for (let i = array.length - 1; i > 0; i--) {
@@ -14,13 +17,21 @@ function Cards({ cards, setCards, clickedCards, setClickedCards, setHighScore, s
     }
 
     useEffect(() => {
-        setCards((cards) => shuffleArray(cards));
-        setHighScore((highScore) => (clickedCards.length > highScore ? clickedCards.length : highScore));
+        setGameInfo((prevGameInfo) => {
+            let currentGame = prevGameInfo.find((game) => game.difficulty === currentDifficulty)
+            currentGame.highScore = (clickedCards.length > currentHighScore ? clickedCards.length : currentHighScore)
+            currentGame.cards = shuffleArray(currentCards)
+            const updatedGameInfo = prevGameInfo.map((game) => {
+                return (game.difficulty === currentDifficulty ? currentGame : game)
+            })
+            return updatedGameInfo;
+        });
+        if (clickedCards.length === currentCards.length) setGameResult("Win")
     }, [clickedCards]);
 
     const handleClick = (card) => {
         if (clickedCards.includes(card.id)){
-            setGameResult(clickedCards.length === cards.length ? "Win" : "Lose")
+            setGameResult("Lose")
         } else {
             setClickedCards((ids) => [...ids, card.id])
         }
@@ -29,7 +40,7 @@ function Cards({ cards, setCards, clickedCards, setClickedCards, setHighScore, s
     return (
         <div className="cardContainer">
             {
-                cards.map((card) => (
+                currentCards.map((card) => (
                     <div className="card" key={card.id} onClick={() => handleClick(card)}>
                         <img src={card.image} alt={card.name} />
                         <div className="name">{card.name}</div>

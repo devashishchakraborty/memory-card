@@ -1,7 +1,7 @@
 .cardContainer {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);  
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, 170px);
+  justify-content: space-between;
   gap: 32px;
 }
 
@@ -26,8 +26,10 @@
 }
 
 .card img{
-  height: 240px;
+  /* height: 240px; */
   border: 1px solid var(--theme-black);
+  width: 100%;
+  object-fit: contain;
 }
 
 .card, .card img{
@@ -36,7 +38,5 @@
 
 .card .name{
   color: var(--theme-white);
-  font-family: "Blood Crow";
   text-align: center;
-  /* font-weight: bold */
 }
