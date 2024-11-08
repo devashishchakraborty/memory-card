@@ -11,87 +11,93 @@ import rengoku from "../images/rengoku.jpg"
 import shinobu from "../images/shinobu.jpg"
 import tengen from "../images/tengen.jpg"
 import zenitsu from "../images/zenitsu.jpg"
-import akaza from "../images/akaza.jpg"
+// import akaza from "../images/akaza.jpg"
 import inosuke from "../images/inosuke.jpg"
 import sanemi from "../images/sanemi.jpg"
+// import mitsuri from "../images/mitsuri.jpg"
 
 
 const characters = [
     {
-        id: uuidv4(),
+        id: 'tanjiro-kamado',
         name: 'Tanjiro Kamado',
         image: tanjiro
     },
     {
-        id: uuidv4(),
+        id: 'zenitsu-agatsuma',
         name: 'Zenitsu Agatsuma',
         image: zenitsu
     },
     {
-        id: uuidv4(),
+        id: 'giyu-tomioka',
         name: 'Giyu Tomioka',
         image: giyuu
     },
     {
-        id: uuidv4(),
+        id: 'gyomei-himejima',
         name: 'Gyomei Himejima',
         image: gyomei
     },
     {
-        id: uuidv4(),
+        id: 'kagaya-ubuyashiki',
         name: 'Kagaya Ubuyashiki',
         image: kagaya
     },
     {
-        id: uuidv4(),
+        id: 'muichiro-tokito',
         name: 'Muichiro Tokito',
         image: muichiro
     },
     {
-        id: uuidv4(),
+        id: 'muzan-kibutsuji',
         name: 'Muzan Kibutsuji',
         image: muzan
     },
     {
-        id: uuidv4(),
+        id: 'nezuko-kamado',
         name: 'Nezuko Kamado',
         image: nezuko
     },
+    // {
+    //     id: 'mitsuri-kanroji',
+    //     name: 'Mitsuri Kanroji',
+    //     image: mitsuri
+    // },
     {
-        id: uuidv4(),
+        id: 'obanai-iguro',
         name: 'Obanai Iguro',
         image: obanai
     },    
+    // {
+    //     id: 'akaza',
+    //     name: 'Akaza',
+    //     image: akaza
+    // },
     {
-        id: uuidv4(),
-        name: 'Akaza',
-        image: akaza
-    },
-    {
-        id: uuidv4(),
+        id: 'inosuke-hashibira',
         name: 'Inosuke Hashibira',
         image: inosuke
     },
     {
-        id: uuidv4(),
+        id: 'sanemi-shinazugawa',
         name: 'Sanemi Shinazugawa',
         image: sanemi
     },
     {
-        id: uuidv4(),
+        id: 'kyōjurō-rengoku',
         name: 'Kyōjurō Rengoku',
         image: rengoku
     },
     {
-        id: uuidv4(),
+        id: 'shinobu-kochō',
         name: 'Shinobu Kochō',
         image: shinobu
     },
     {
-        id: uuidv4(),
+        id: 'tengen-uzui',
         name: 'Tengen Uzui',
         image: tengen
     }
-]
+];
 
 export default characters;
