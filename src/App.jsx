@@ -10,6 +10,8 @@ function App() {
   const [clickedCards, setClickedCards] = useState([]);
   const [gameResult, setGameResult] = useState(null);
   const [difficulty, setDifficulty] = useState("easy")
+
+  // Using a gameInfo Object state insted of individual states.
   const [gameInfo, setGameInfo] = useState([
     {
       difficulty: "easy",
@@ -28,7 +30,6 @@ function App() {
     }
   ])
 
-
   const handleDifficulty = (e) => {
     setDifficulty(e.target.value);
     setClickedCards([]);
@@ -36,7 +37,14 @@ function App() {
 
   return (
     <>
-      {gameResult && <GameOver gameResult={gameResult} setGameResult={setGameResult} setClickedCards={setClickedCards} />}
+      {
+        gameResult && 
+        <GameOver 
+          gameResult={gameResult} 
+          setGameResult={setGameResult} 
+          setClickedCards={setClickedCards} 
+        />
+      }
 
       <header>
         <img src={logo} alt="" />
@@ -46,6 +54,7 @@ function App() {
       <main>
         <div className='infoPanel'>
 
+          {/* Section to change difficulty */}
           <div className='selectDifficulty'>
             <label for="difficulty">Select Difficulty: </label>
             <select name="difficulty" id="difficulty" value={difficulty} onChange={handleDifficulty}>
@@ -54,8 +63,14 @@ function App() {
               <option value="hard">Hard</option>
             </select>
           </div>
+
           <div className='instruction'>Try not to click a card twice!</div>
+          
           <div className='scoreBoard'>
+            {
+              /* Using the clickedCards list to update current Score. 
+              Any Changes made on that list would update the score automatically. */
+            }
             <div className="currentScore">Current Score : {clickedCards.length}</div>
             <div className="highScore">High Score : {gameInfo.find((game) => game.difficulty === difficulty).highScore}</div>
           </div>

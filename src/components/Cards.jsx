@@ -2,6 +2,7 @@ import "../styles/Cards.css"
 import { useEffect, useLayoutEffect, useState } from "react" 
 
 function Cards({ gameInfo, setGameInfo, clickedCards, setClickedCards, currentDifficulty, setGameResult }) {
+    // Getting current info
     const currentCards = gameInfo.find((game) => game.difficulty === currentDifficulty).cards;
     const currentHighScore = gameInfo.find((game) => game.difficulty === currentDifficulty).highScore;
 
@@ -19,6 +20,7 @@ function Cards({ gameInfo, setGameInfo, clickedCards, setClickedCards, currentDi
     useEffect(() => {
         setGameInfo((prevGameInfo) => {
             let currentGame = prevGameInfo.find((game) => game.difficulty === currentDifficulty)
+            // Updating the highScore and cards everytime clickedCards is changed
             currentGame.highScore = (clickedCards.length > currentHighScore ? clickedCards.length : currentHighScore)
             currentGame.cards = shuffleArray(currentCards)
             const updatedGameInfo = prevGameInfo.map((game) => {
@@ -26,15 +28,14 @@ function Cards({ gameInfo, setGameInfo, clickedCards, setClickedCards, currentDi
             })
             return updatedGameInfo;
         });
+        // Checking if the player won
         if (clickedCards.length === currentCards.length) setGameResult("Win")
     }, [clickedCards]);
 
     const handleClick = (card) => {
-        if (clickedCards.includes(card.id)){
-            setGameResult("Lose")
-        } else {
-            setClickedCards((ids) => [...ids, card.id])
-        }
+        // Ending the game if card is clicked again.
+        if (clickedCards.includes(card.id)) setGameResult("Lose")
+        else setClickedCards((ids) => [...ids, card.id])
     }
 
     return (
